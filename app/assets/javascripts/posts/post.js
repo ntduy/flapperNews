@@ -1,6 +1,4 @@
-angular.module('flapperNews')
-.factory('posts', [
-	'$http',
+angular.module('flapperNews').factory('posts', ['$http',
 	function($http){
 		var o = {
 			posts: []
@@ -38,10 +36,7 @@ angular.module('flapperNews')
 		return o;
 	}])
 
-.controller('PostsCtrl',[
-	'$scope',
-	'posts',
-	'post',
+.controller('PostsCtrl',['$scope','posts','post',
 	function($scope, posts, post){
 		$scope.post = post;
 		$scope.addComment = function(){
